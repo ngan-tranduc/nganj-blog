@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using NganjBlog.Api;
 using NganjBlog.Core.Domain.Identity;
 using NganjBlog.Data;
 
@@ -56,5 +57,8 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+//Seed default data
+app.MigrateDatabase();
 
 app.Run();
