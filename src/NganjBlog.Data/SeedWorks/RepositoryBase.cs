@@ -11,9 +11,11 @@ namespace NganjBlog.Data.SeedWorks
     public class RepositoryBase<T, Key> : IRepository<T, Key> where T : class
     {
         private readonly DbSet<T> _dbSet;
+        protected readonly NganjBlogContext _context;
         public RepositoryBase(NganjBlogContext context)
         {
             _dbSet = context.Set<T>();
+            _context = context;
         }
         public void Add(T entity)
         {
